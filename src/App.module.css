@@ -20,4 +20,19 @@ body {
   margin: 0 auto;
   background-color: #263238;
   color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.fullRoundedBox {
+  width: 3rem;
+  height: 3rem;
+  min-width: 3rem;
+  min-height: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 100vmax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
 }
