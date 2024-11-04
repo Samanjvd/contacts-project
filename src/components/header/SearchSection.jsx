@@ -6,7 +6,7 @@ export default function SearchSection() {
   return (
     <div className={styles.searchSection}>
       <form className={styles.searchForm}>
-        <button className={styles.buttonSearch}>
+        <button type="submit" className={styles.buttonSearch}>
           <CiSearch className={styles.icons} />
         </button>
         <input

@@ -4,10 +4,13 @@ import ItemContact from "./ItemContact";
 
 export default function ListContact() {
   return (
-    <div>
-      <ul className={styles.list}>
-        <ItemContact />
-      </ul>
-    </div>
+    <ul className={styles.list}>
+      <ItemContact />
+      <ItemContact />
+      <ItemContact />
+      <ItemContact />
+      <ItemContact />
+      <ItemContact />
+    </ul>
   );
 }

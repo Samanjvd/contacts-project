@@ -1,13 +1,15 @@
 .searchSection {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgb(86, 86, 86);
   width: 50%;
   border-radius: 100vmax;
+  outline: 1px solid #eee;
 }
 
 .searchForm {
   display: flex;
   min-width: 2rem;
   min-height: 3rem;
+  cursor: pointer;
 }
 
 .searchInput {
@@ -16,6 +18,10 @@
   height: inherit;
   color: rgba(255, 255, 255, 0.5);
 }
+
+/* .searchInput:focus {
+  outline: 1px solid #eee;
+} */
 
 .buttonSearch {
   background: none;

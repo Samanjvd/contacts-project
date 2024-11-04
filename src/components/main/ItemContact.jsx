@@ -6,15 +6,21 @@ import { FaStar } from "react-icons/fa";
 
 export default function ItemContact() {
   return (
-    <div>
+    <div className={styles.itemContact}>
       <li className={styles.listItem}>
-        <div className={`${stylesApp.fullRoundedBox} ${styles.profile}`}>
-          <IoPersonCircleSharp />
+        <div className={styles.right}>
+          <div className={`${stylesApp.fullRoundedBox} ${styles.profile}`}>
+            <IoPersonCircleSharp className={styles.IconProfile} />
+          </div>
+          <div className={styles.info}>
+            <p className={styles.nameContact}>saman javidi</p>
+            <p className={styles.numberContact}>099258366343</p>
+          </div>
         </div>
-        <p className={styles.nameContact}>saman javidi</p>
-        <p className={styles.numberContact}>099258366343</p>
-        <div className={`${stylesApp.fullRoundedBox} ${styles.favoriteIcon}`}>
-          <FaStar />
+        <div className={styles.left}>
+          <div className={`${stylesApp.fullRoundedBox} ${styles.favoriteIcon}`}>
+            <FaStar />
+          </div>
         </div>
       </li>
     </div>

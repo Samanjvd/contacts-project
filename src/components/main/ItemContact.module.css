@@ -1,8 +1,60 @@
+.itemContact {
+  position: relative;
+}
+
 .listItem {
+  width: 25rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.itemContact :hover {
+  background-color: #2979ff;
+  border-radius: 100vmax;
+  -webkit-border-radius: 100vmax;
+  -moz-border-radius: 100vmax;
+  -ms-border-radius: 100vmax;
+  -o-border-radius: 100vmax;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.IconProfile {
+  width: 48px;
+  height: 48px;
+}
+
+.profile {
+  background-size: cover;
+}
+
+.info {
 }
 
 .nameContact {
+  margin-bottom: 0.5rem;
 }
 
 .numberContact {
+  font-size: 10px;
+  opacity: 0.4;
+}
+
+.favoriteIcon {
+  position: absolute;
+  right: 6px;
+  z-index: 100;
+}
+.left {
+  cursor: pointer;
+}
+
+.left :hover {
+  background-color: #ddd;
+  color: #000;
 }

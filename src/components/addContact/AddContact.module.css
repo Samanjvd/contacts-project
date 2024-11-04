@@ -1,0 +1,18 @@
+.addContact {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modalPage {
+  max-width: 30rem;
+  background-color: #fff;
+}
+
+.iconClose {
+}
