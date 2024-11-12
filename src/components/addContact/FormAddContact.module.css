@@ -1,0 +1,35 @@
+.formAddContact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.input {
+  color: rgba(0, 0, 0, 0.705);
+  width: 100%;
+  padding-right: 0.5rem;
+  background: none;
+}
+
+.sectionInput {
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.nameContact {
+}
+
+.sectionNum {
+}
+
+.numContact {
+}
+
+.icons {
+  margin: 0.1rem 0.5rem 0.1rem 0.5rem;
+}

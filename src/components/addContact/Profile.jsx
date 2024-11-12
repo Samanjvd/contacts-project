@@ -4,11 +4,13 @@ import { FaCamera } from "react-icons/fa";
 
 export default function Profile() {
   return (
-    <div>
-      <label className={styles.imgProfil}>
-        <FaCamera />
-        <input type="file" className="profileInput" />
+    <>
+      <label className={styles.imgProfile}>
+        <div className={styles.iconprofile}>
+          <FaCamera />
+        </div>
+        <input type="file" className={`${styles.profileInput}`} />
       </label>
-    </div>
+    </>
   );
 }

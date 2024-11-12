@@ -7,9 +7,10 @@
 
 .searchForm {
   display: flex;
-  min-width: 2rem;
-  min-height: 3rem;
+  min-width: 1rem;
+  min-height: 2rem;
   cursor: pointer;
+  padding: 0.1rem;
 }
 
 .searchInput {
@@ -25,7 +26,7 @@
 
 .buttonSearch {
   background: none;
-  padding: 6px 6px 6px 10px;
+  padding: 6px 6px 2px 6px;
 }
 
 .icons {

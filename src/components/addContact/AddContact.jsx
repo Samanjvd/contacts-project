@@ -9,12 +9,12 @@ export default function AddContact() {
   return (
     <div className={styles.addContact}>
       <div className={styles.modalPage}>
-        <span className={styles.iconClose}>
+        <div className={styles.iconClose}>
           <IoMdClose />
-        </span>
-        <Buttons />
-        <FormAddContact />
+        </div>
         <Profile />
+        <FormAddContact />
+        <Buttons />
       </div>
     </div>
   );

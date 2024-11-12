@@ -1,0 +1,22 @@
+.buttons {
+  width: 100%;
+  text-align: center;
+  margin: 0.2rem 0;
+}
+
+.btnContact {
+  background: none;
+  color: #fff;
+  font-size: 1.2rem;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  transition: background 0.2s ease;
+  border-radius: 0.5rem;
+}
+
+.btnContact:active {
+  /* transform: scale(0.9); */
+  background-color: #eee;
+  color: black;
+}
