@@ -4,10 +4,8 @@ import stylesButtons from "./Buttons.module.css";
 import { BsSortAlphaDown } from "react-icons/bs";
 import { BiFilterAlt } from "react-icons/bi";
 import { IoAddOutline } from "react-icons/io5";
-import { useState } from "react";
 
-export default function Buttons() {
-  const [isClicked, setIsClicked] = useState(false);
+export default function Buttons({ onAddToBtn }) {
   return (
     <div className={stylesButtons.buttons}>
       <div className={`${stylesApp.fullRoundedBox} ${stylesButtons.button}`}>
@@ -17,8 +15,7 @@ export default function Buttons() {
         <BiFilterAlt className={stylesButtons.filterIcon} />
       </div>
       <div
-        status={isClicked}
-        onAddModal={setIsClicked}
+        onClick={() => onAddToBtn(true)}
         className={`${stylesApp.fullRoundedBox} ${stylesButtons.button}`}
       >
         <IoAddOutline style={{ fontSize: "2rem" }} />
