@@ -10,8 +10,17 @@ export default function ItemContact() {
       <li className={styles.listItem}>
         <div className={styles.right}>
           <div className={`${stylesApp.fullRoundedBox} ${styles.profile}`}>
-            <IoPersonCircleSharp className={styles.IconProfile} />
+            {localStorage.getItem("urlImage") !== null ? (
+              <img
+                src={localStorage.getItem("urlImage")}
+                alt="Profile"
+                className={styles.profileImg}
+              />
+            ) : (
+              <IoPersonCircleSharp className={styles.IconProfile} />
+            )}
           </div>
+
           <div className={styles.info}>
             <p className={styles.nameContact}>saman javidi</p>
             <p className={styles.numberContact}>099258366343</p>

@@ -6,15 +6,13 @@ import FormAddContact from "./FormAddContact";
 import Profile from "./Profile";
 
 export default function AddContact({ status, onAddModal }) {
-  const [UrlImag, setUrlImage] = useState("");
-  const [inputData, setinputData] = useState("");
+  const [UrlImag, setUrlImage] = useState(null);
+  const [inputData, setInputData] = useState("");
 
   const handleInputData = (data) => {
-    setUrlImage(data);
-    console.log(data);
+    return setUrlImage(data);
   };
 
-  // console.log(inputData);
   return (
     <div
       className={`${styles.addContact} ${
@@ -25,9 +23,14 @@ export default function AddContact({ status, onAddModal }) {
         <div className={styles.iconClose} onClick={() => onAddModal(false)}>
           <IoMdClose />
         </div>
-        <Profile ongetUrl={handleInputData} />
-        <FormAddContact ongetData={setinputData} />
-        <Buttons data={inputData} url={UrlImag} />
+        <Profile onGetUrl={handleInputData} />
+        <FormAddContact onGetData={setInputData} />
+        <Buttons
+          data={inputData}
+          url={UrlImag}
+          status={status}
+          onAddModal={onAddModal}
+        />
       </div>
     </div>
   );

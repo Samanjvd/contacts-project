@@ -2,10 +2,10 @@ import React, { useState, useRef } from "react";
 import styles from "./profile.module.css";
 import { FaCamera } from "react-icons/fa";
 
-export default function Profile({ ongetUrl }) {
+export default function Profile({ onGetUrl }) {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [urlImage, setUrlImage] = useState("");
   const inputRef = useRef(null);
+  // const imgRef = useRef("");
   // const handleImageChange = (e) => {
   //   const file = e.target.files[0];
 
@@ -24,23 +24,31 @@ export default function Profile({ ongetUrl }) {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    setSelectedImage(file.name);
-    setUrlImage(file.name);
-    // setSelectedImage(e.target.files[0]);
+    if (file) {
+      const createUrl = URL.createObjectURL(file);
+      setSelectedImage(createUrl);
+      onGetUrl(createUrl);
+    } else {
+      setSelectedImage(null);
+    }
+    // setSelectedImage(file.name);
+    // setUrlImage(file.name);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    ongetUrl(urlImage);
-  };
+  // const handleSubmit = () => {
+  //   const file = imgRef.current;
+  //   console.log(file);
+  //   if (file) {
+  //     setUrlImage(file.src);
+  //   } else {
+  //     setUrlImage(null);
+  //   }
+  //   onGetUrl(urlImage);
+  // };
 
   return (
     <>
-      <div
-        className={styles.imgProfile}
-        onClick={handleImageClicked}
-        onSubmit={handleSubmit}
-      >
+      <div className={styles.imgProfile} onClick={handleImageClicked}>
         {selectedImage ? (
           <img
             // src={URL.createObjectURL(selectedImage)}
