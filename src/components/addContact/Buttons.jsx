@@ -3,8 +3,12 @@ import styles from "./Buttons.module.css";
 
 export default function Buttons({ url, data, status, onAddModal }) {
   const handleClick = () => {
-    console.log(url);
-    localStorage.setItem("urlImage", url);
+    url === null
+      ? localStorage.removeItem("urlImage")
+      : localStorage.setItem("urlImage", url);
+
+    console.log(data);
+
     if (status === true) {
       onAddModal(false);
     }

@@ -30,6 +30,7 @@ export default function Profile({ onGetUrl }) {
       onGetUrl(createUrl);
     } else {
       setSelectedImage(null);
+      onGetUrl(null);
     }
     // setSelectedImage(file.name);
     // setUrlImage(file.name);

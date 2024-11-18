@@ -9,9 +9,15 @@ export default function AddContact({ status, onAddModal }) {
   const [UrlImag, setUrlImage] = useState(null);
   const [inputData, setInputData] = useState("");
 
-  const handleInputData = (data) => {
+  const handleUrlImg = (data) => {
     return setUrlImage(data);
   };
+
+  const handleInputData = (data) => {
+    return setInputData([data]);
+  };
+
+  console.log(inputData);
 
   return (
     <div
@@ -23,8 +29,8 @@ export default function AddContact({ status, onAddModal }) {
         <div className={styles.iconClose} onClick={() => onAddModal(false)}>
           <IoMdClose />
         </div>
-        <Profile onGetUrl={handleInputData} />
-        <FormAddContact onGetData={setInputData} />
+        <Profile onGetUrl={handleUrlImg} />
+        <FormAddContact onGetData={handleInputData} />
         <Buttons
           data={inputData}
           url={UrlImag}

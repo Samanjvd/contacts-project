@@ -4,8 +4,8 @@ import { IoPersonOutline } from "react-icons/io5";
 import { IoCallOutline } from "react-icons/io5";
 
 export default function FormAddContact({ onGetData }) {
-  // const inputNameRef = useRef(null);
-  // const inputNumRef = useRef(null);
+  let inputNameRef = useRef(null);
+  let inputNumRef = useRef(null);
 
   // const dataInputName = inputNameRef.current.value;
   // getData(() => dataInputName);
@@ -37,21 +37,22 @@ export default function FormAddContact({ onGetData }) {
   const handleChangeName = (e) => {
     const value = e.target.value;
     setInputNameValue(value);
+    // inputNameRef = value;
   };
 
   const handleChangeNum = (e) => {
     const value = e.target.value;
     setInputNumValue(value);
+    // inputNumRef = value;
   };
 
-  // const handleChangeNum = (e) => setInputNumValue(e.target.value);
+  // const { name, num } = {
+  //   name: inputNameValue,
+  //   num: inputNumValue,
+  // };
 
-  const dataInputs = {
-    name: inputNameValue,
-    num: inputNumValue,
-  };
-
-  // onGetData(dataInputs);
+  // onGetData(name);
+  // onGetData(num);
 
   return (
     <>
