@@ -5,19 +5,23 @@ import stylesApp from "../../App.module.css";
 import { FaStar } from "react-icons/fa";
 
 export default function ItemContact() {
+  const contactsStorage = localStorage.getItem("contact").items;
+
   return (
     <div className={styles.itemContact}>
       <li className={styles.listItem}>
         <div className={styles.right}>
           <div className={`${stylesApp.fullRoundedBox} ${styles.profile}`}>
-            {localStorage.getItem("urlImage") === null ? (
-              <IoPersonCircleSharp className={styles.IconProfile} />
+            {contactsStorage ? (
+              contactsStorage.map(({ name, num, url }) => {
+                <img
+                  src={localStorage.getItem("urlImage")}
+                  alt="Profile"
+                  className={styles.profileImg}
+                />;
+              })
             ) : (
-              <img
-                src={localStorage.getItem("urlImage")}
-                alt="Profile"
-                className={styles.profileImg}
-              />
+              <IoPersonCircleSharp className={styles.IconProfile} />
             )}
           </div>
 

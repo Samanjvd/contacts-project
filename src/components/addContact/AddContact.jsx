@@ -1,23 +1,16 @@
 import React, { useState } from "react";
 import styles from "./AddContact.module.css";
 import { IoMdClose } from "react-icons/io";
-import Buttons from "./Buttons";
 import FormAddContact from "./FormAddContact";
-import Profile from "./Profile";
 
 export default function AddContact({ status, onAddModal }) {
-  const [UrlImag, setUrlImage] = useState(null);
-  const [inputData, setInputData] = useState("");
+  // const [FormData, setFormData] = useState({});
 
-  const handleUrlImg = (data) => {
-    return setUrlImage(data);
-  };
+  // const handleFormData = (data) => {
 
-  const handleInputData = (data) => {
-    return setInputData([data]);
-  };
+  //   setFormData(data);
 
-  console.log(inputData);
+  // };
 
   return (
     <div
@@ -29,14 +22,14 @@ export default function AddContact({ status, onAddModal }) {
         <div className={styles.iconClose} onClick={() => onAddModal(false)}>
           <IoMdClose />
         </div>
-        <Profile onGetUrl={handleUrlImg} />
-        <FormAddContact onGetData={handleInputData} />
-        <Buttons
-          data={inputData}
+        {/* <Profile onGetUrl={handleUrlImg} /> */}
+        <FormAddContact status={status} onAddModal={onAddModal} />
+        {/* <Buttons
+          data={FormData}
           url={UrlImag}
           status={status}
           onAddModal={onAddModal}
-        />
+        /> */}
       </div>
     </div>
   );

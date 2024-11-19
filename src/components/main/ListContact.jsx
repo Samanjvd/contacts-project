@@ -7,11 +7,6 @@ export default function ListContact() {
     <>
       <ul className={styles.list}>
         <ItemContact />
-        <ItemContact />
-        <ItemContact />
-        <ItemContact />
-        <ItemContact />
-        <ItemContact />
       </ul>
     </>
   );

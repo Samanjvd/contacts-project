@@ -32,20 +32,7 @@ export default function Profile({ onGetUrl }) {
       setSelectedImage(null);
       onGetUrl(null);
     }
-    // setSelectedImage(file.name);
-    // setUrlImage(file.name);
   };
-
-  // const handleSubmit = () => {
-  //   const file = imgRef.current;
-  //   console.log(file);
-  //   if (file) {
-  //     setUrlImage(file.src);
-  //   } else {
-  //     setUrlImage(null);
-  //   }
-  //   onGetUrl(urlImage);
-  // };
 
   return (
     <>
