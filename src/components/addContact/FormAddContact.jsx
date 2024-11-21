@@ -119,6 +119,7 @@ export default function FormAddContact({ status, onAddModal }) {
             onChange={handleChangeNum}
             // onChange={(e) => setInputNumValue(e.target.value)}
             className={`${styles.numContact} ${styles.input}`}
+            maxLength={11}
           />
         </div>
         <Buttons />

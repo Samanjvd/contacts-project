@@ -1,41 +1,93 @@
-import React from "react";
-import styles from "./ItemContact.module.css";
+// import React from "react";
+// import styles from "./ItemContact.module.css";
+// import { IoPersonCircleSharp } from "react-icons/io5";
+// import stylesApp from "../../App.module.css";
+// import { FaStar } from "react-icons/fa";
+
+// export default function ItemContact() {
+//   const contactsStorage = localStorage.getItem("contacts");
+//   const itemsContacts = JSON.parse(contactsStorage).items;
+//   console.log(itemsContacts);
+
+//   return (
+//     <div className={styles.itemContact}>
+//       {itemsContacts.map(({ name, num, url }) => {
+//         <li className={styles.listItem}>
+//           {console.log(name + "\n" + num + "\n" + url)}
+//           <div className={styles.right}>
+//             <div className={`${stylesApp.fullRoundedBox} ${styles.profile}`}>
+//               {url ? (
+//                 <img src={url} alt="Profile" className={styles.profileImg} />
+//               ) : (
+//                 <IoPersonCircleSharp className={styles.IconProfile} />
+//               )}
+//             </div>
+
+//             <div className={styles.info}>
+//               <p className={styles.nameContact}>{name}</p>
+//               <p className={styles.numberContact}>{num}</p>
+//             </div>
+//           </div>
+//           <div className={styles.left}>
+//             <div
+//               className={`${stylesApp.fullRoundedBox} ${styles.favoriteIcon}`}
+//             >
+//               <FaStar />
+//             </div>
+//           </div>
+//         </li>;
+//       })}
+//     </div>
+//   );
+// }
+
+import React, { useEffect, useState } from "react";
 import { IoPersonCircleSharp } from "react-icons/io5";
-import stylesApp from "../../App.module.css";
 import { FaStar } from "react-icons/fa";
+import styles from "./ItemContact.module.css";
+import stylesApp from "../../App.module.css";
 
 export default function ItemContact() {
-  const contactsStorage = localStorage.getItem("contact").items;
+  const [itemsContacts, setItemsContacts] = useState([]);
+
+  useEffect(() => {
+    const contactsStorage = localStorage.getItem("contacts");
+    if (contactsStorage) {
+      const parsedContacts = JSON.parse(contactsStorage).items;
+      setItemsContacts(parsedContacts);
+    }
+  }, []);
+
+  console.log(itemsContacts);
 
   return (
     <div className={styles.itemContact}>
-      <li className={styles.listItem}>
-        <div className={styles.right}>
-          <div className={`${stylesApp.fullRoundedBox} ${styles.profile}`}>
-            {contactsStorage ? (
-              contactsStorage.map(({ name, num, url }) => {
-                <img
-                  src={localStorage.getItem("urlImage")}
-                  alt="Profile"
-                  className={styles.profileImg}
-                />;
-              })
-            ) : (
-              <IoPersonCircleSharp className={styles.IconProfile} />
-            )}
-          </div>
+      {itemsContacts.map(({ name, num, url }, index) => (
+        <li key={index} className={styles.listItem}>
+          {console.log(name + "\n" + num + "\n" + url)}
+          <div className={styles.right}>
+            <div className={`${stylesApp.fullRoundedBox} ${styles.profile}`}>
+              {url ? (
+                <img src={url} alt="Profile" className={styles.profileImg} />
+              ) : (
+                <IoPersonCircleSharp className={styles.IconProfile} />
+              )}
+            </div>
 
-          <div className={styles.info}>
-            <p className={styles.nameContact}>saman javidi</p>
-            <p className={styles.numberContact}>099258366343</p>
+            <div className={styles.info}>
+              <p className={styles.nameContact}>{name}</p>
+              <p className={styles.numberContact}>{num}</p>
+            </div>
           </div>
-        </div>
-        <div className={styles.left}>
-          <div className={`${stylesApp.fullRoundedBox} ${styles.favoriteIcon}`}>
-            <FaStar />
+          <div className={styles.left}>
+            <div
+              className={`${stylesApp.fullRoundedBox} ${styles.favoriteIcon}`}
+            >
+              <FaStar />
+            </div>
           </div>
-        </div>
-      </li>
+        </li>
+      ))}
     </div>
   );
 }
