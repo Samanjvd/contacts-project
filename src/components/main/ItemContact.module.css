@@ -58,6 +58,13 @@
   right: 6px;
   z-index: 100;
 }
+
+.closeIcon {
+  position: absolute;
+  right: 42px;
+  z-index: 100;
+}
+
 .left {
   cursor: pointer;
 }

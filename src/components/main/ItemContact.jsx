@@ -46,25 +46,24 @@ import { IoPersonCircleSharp } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import styles from "./ItemContact.module.css";
 import stylesApp from "../../App.module.css";
+import { FaTrashCan } from "react-icons/fa6";
 
 export default function ItemContact() {
   const [itemsContacts, setItemsContacts] = useState([]);
+  const [stateDelete, setStateDelete] = useState(false);
+  const contactsStorage = localStorage.getItem("contacts");
 
   useEffect(() => {
-    const contactsStorage = localStorage.getItem("contacts");
     if (contactsStorage) {
       const parsedContacts = JSON.parse(contactsStorage).items;
       setItemsContacts(parsedContacts);
     }
-  }, []);
-
-  console.log(itemsContacts);
+  }, [contactsStorage]);
 
   return (
     <div className={styles.itemContact}>
       {itemsContacts.map(({ name, num, url }, index) => (
         <li key={index} className={styles.listItem}>
-          {console.log(name + "\n" + num + "\n" + url)}
           <div className={styles.right}>
             <div className={`${stylesApp.fullRoundedBox} ${styles.profile}`}>
               {url ? (
@@ -84,6 +83,14 @@ export default function ItemContact() {
               className={`${stylesApp.fullRoundedBox} ${styles.favoriteIcon}`}
             >
               <FaStar />
+            </div>
+            <div
+              className={`${stylesApp.fullRoundedBox} ${styles.closeIcon} `}
+              onClick={() => {
+                setStateDelete(true);
+              }}
+            >
+              <FaTrashCan />
             </div>
           </div>
         </li>
