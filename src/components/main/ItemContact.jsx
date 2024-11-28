@@ -48,17 +48,35 @@ import styles from "./ItemContact.module.css";
 import stylesApp from "../../App.module.css";
 import { FaTrashCan } from "react-icons/fa6";
 
-export default function ItemContact() {
+export default function ItemContact({
+  confirm,
+  isConfirm,
+  confirmDelete,
+  isConfirmDelete,
+}) {
   const [itemsContacts, setItemsContacts] = useState([]);
-  const [stateDelete, setStateDelete] = useState(false);
   const contactsStorage = localStorage.getItem("contacts");
 
   useEffect(() => {
     if (contactsStorage) {
-      const parsedContacts = JSON.parse(contactsStorage).items;
-      setItemsContacts(parsedContacts);
+      try {
+        const parsedContacts = JSON.parse(contactsStorage).items;
+        setItemsContacts(parsedContacts);
+      } catch (error) {
+        console.error("Failed to parse contacts from localStorage", error);
+      }
     }
   }, [contactsStorage]);
+
+  const handleDeleteContact = (index) => {
+    const updatedContacts = itemsContacts.filter((_, i) => i !== index);
+    setItemsContacts(updatedContacts);
+
+    localStorage.setItem(
+      "contacts",
+      JSON.stringify({ items: updatedContacts })
+    );
+  };
 
   return (
     <div className={styles.itemContact}>
@@ -85,10 +103,22 @@ export default function ItemContact() {
               <FaStar />
             </div>
             <div
-              className={`${stylesApp.fullRoundedBox} ${styles.closeIcon} `}
+              className={`${stylesApp.fullRoundedBox} ${styles.closeIcon}`}
               onClick={() => {
-                setStateDelete(true);
+                isConfirm(true);
+
+                if (confirmDelete) {
+                  handleDeleteContact(index);
+                  isConfirmDelete(false);
+                }
+
+                // window.confirm(`Are you sure you want to delete ${name}?`)
+                // if (confirm) {
+                //   handleDeleteContact(index);
+                //   isConfirm(false);
+                // }
               }}
+              aria-label={`Delete ${name}`}
             >
               <FaTrashCan />
             </div>

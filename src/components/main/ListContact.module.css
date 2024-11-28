@@ -1,6 +1,26 @@
 .list {
   display: flex;
   align-items: center;
-  margin: 2rem 0 0 0;
   flex-direction: column;
+  height: 12rem;
+  padding-bottom: 0.5rem;
+  overflow: auto;
+  margin-bottom: 1rem;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 100%;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

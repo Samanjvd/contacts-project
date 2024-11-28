@@ -4,7 +4,7 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.8);
   transform: scale(0);
@@ -21,10 +21,11 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  min-width: 20rem;
-  padding: 2rem 1rem 0 1rem;
+  min-width: 25rem;
+  padding: 2rem 1rem 1rem 1rem;
   background-color: #3d3d3d;
   border-radius: 8px;
+  margin-top: 1.2rem;
 }
 
 .iconClose {
