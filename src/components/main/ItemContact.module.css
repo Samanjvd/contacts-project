@@ -45,15 +45,12 @@
   background-size: cover;
 }
 
-.info {
-}
-
 .nameContact {
   font-size: 13px;
   margin-bottom: 0.1rem;
 }
 
-.numberContact {
+.PhoneContact {
   font-size: 10px;
   opacity: 0.4;
 }
@@ -68,6 +65,12 @@
   position: absolute;
   right: 42px;
   z-index: 100;
+}
+
+.favoriteIcon,
+.closeIcon {
+  background-color: #000;
+  color: #ddd;
 }
 
 .left {

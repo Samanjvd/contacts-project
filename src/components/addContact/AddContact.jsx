@@ -3,18 +3,18 @@ import styles from "./AddContact.module.css";
 import { IoMdClose } from "react-icons/io";
 import FormAddContact from "./FormAddContact";
 
-export default function AddContact({ status, onAddModal }) {
+export default function AddContact({ statusClicked, onAddModal }) {
   return (
     <div
       className={`${styles.addContact} ${
-        status === true ? styles.activeModal : ""
+        statusClicked === true ? styles.activeModal : ""
       }`}
     >
       <div className={styles.modalPage}>
         <div className={styles.iconClose} onClick={() => onAddModal(false)}>
           <IoMdClose />
         </div>
-        <FormAddContact status={status} onAddModal={onAddModal} />
+        <FormAddContact statusClicked={statusClicked} onAddModal={onAddModal} />
       </div>
     </div>
   );

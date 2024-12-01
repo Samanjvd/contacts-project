@@ -5,19 +5,19 @@ import { IoCallOutline } from "react-icons/io5";
 import Buttons from "./Buttons";
 import Profile from "./Profile";
 
-export default function FormAddContact({ status, onAddModal }) {
-  const [inputNameValue, setInputNameValue] = useState();
-  const [inputNumValue, setInputNumValue] = useState();
-  const [urlImag, setUrlImage] = useState();
+export default function FormAddContact({ statusClicked, onAddModal }) {
+  const [inputNameValue, setInputNameValue] = useState("");
+  const [inputPhoneValue, setInputPhoneValue] = useState("");
+  const [urlImag, setUrlImage] = useState(null);
 
   const handleChangeName = (e) => {
     const value = e.target.value;
     setInputNameValue(value);
   };
 
-  const handleChangeNum = (e) => {
+  const handleChangePhone = (e) => {
     const value = e.target.value;
-    setInputNumValue(value);
+    setInputPhoneValue(value);
   };
 
   const handleUrlImg = (data) => {
@@ -27,41 +27,38 @@ export default function FormAddContact({ status, onAddModal }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (status === true) {
+    if (statusClicked === true) {
       onAddModal(false);
     }
-    const datas = {
+
+    const contactItem = {
       name: inputNameValue,
-      num: inputNumValue,
+      Phone: inputPhoneValue,
       url: urlImag,
     };
-
-    // const contacts = {
-    //   items: [datas],
-    // };
-    // localStorage.setItem("contacts", JSON.stringify(contacts));
 
     const contactsStorage = localStorage.getItem("contacts");
 
     if (contactsStorage) {
       const contacts = JSON.parse(contactsStorage);
-      console.log(contacts);
-      // contacts.items.filter((element1, element2) => {
-      //   if (element1 === element2) {
-      //   }
-      // });
-      contacts.items.push(datas);
+
+      // const isDuplicate = contacts.items.some(
+      //   (data) =>
+      //     data.name !== contactItem.name && data.Phone !== contactItem.Phone
+      // );
+
+      // if (isDuplicate) {
+      contacts.items.push(contactItem);
       localStorage.setItem("contacts", JSON.stringify(contacts));
-      return;
+      // } else {
+      //   alert("Duplicate contact found. Not adding.");
+      // }
+    } else {
+      localStorage.setItem(
+        "contacts",
+        JSON.stringify({ items: [contactItem] })
+      );
     }
-    localStorage.setItem("contacts", JSON.stringify({ items: [datas] }));
-
-    // localStorage.setItem("URL", urlImag);
-    // localStorage.setItem("NAME", [inputNameValue]);
-    // localStorage.setItem("NUM", [inputNumValue]);
-
-    // console.log(UrlImag);
-    // console.log(inputNameValue, inputNumValue);
   };
 
   return (
@@ -76,6 +73,7 @@ export default function FormAddContact({ status, onAddModal }) {
             placeholder="Name"
             onChange={handleChangeName}
             className={`${styles.nameContact} ${styles.input}`}
+            name="name"
           />
         </div>
         <div className={styles.sectionInput}>
@@ -84,11 +82,12 @@ export default function FormAddContact({ status, onAddModal }) {
           </span>
           <input
             type="text"
-            value={inputNumValue}
+            value={inputPhoneValue}
             placeholder="Phone"
-            onChange={handleChangeNum}
-            className={`${styles.numContact} ${styles.input}`}
+            onChange={handleChangePhone}
+            className={`${styles.PhoneContact} ${styles.input}`}
             maxLength={11}
+            name="phone"
           />
         </div>
         <Buttons />
