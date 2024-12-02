@@ -42,17 +42,16 @@ export default function FormAddContact({ statusClicked, onAddModal }) {
     if (contactsStorage) {
       const contacts = JSON.parse(contactsStorage);
 
-      // const isDuplicate = contacts.items.some(
-      //   (data) =>
-      //     data.name !== contactItem.name && data.Phone !== contactItem.Phone
-      // );
+      const isDuplicate = contacts.items.some(
+        (data) => data.Phone === contactItem.Phone
+      );
 
-      // if (isDuplicate) {
-      contacts.items.push(contactItem);
-      localStorage.setItem("contacts", JSON.stringify(contacts));
-      // } else {
-      //   alert("Duplicate contact found. Not adding.");
-      // }
+      if (!isDuplicate) {
+        contacts.items.push(contactItem);
+        localStorage.setItem("contacts", JSON.stringify(contacts));
+      } else {
+        alert("Duplicate contact found. Not adding.");
+      }
     } else {
       localStorage.setItem(
         "contacts",
