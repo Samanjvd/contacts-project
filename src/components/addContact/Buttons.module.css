@@ -1,16 +1,16 @@
 .buttons {
   width: 100%;
   text-align: center;
-  margin: 0.2rem 0;
 }
 
 .btnContact {
-  background: none;
+  background: #757575;
   color: #fff;
   font-size: 1.2rem;
   width: 100%;
   margin: 1rem 0;
-  padding: 0.5rem;
+  padding: 0.8rem 0rem;
+  box-shadow: 1px, 1px, 1px, #757575;
   transition: background 0.2s ease;
   border-radius: 0.5rem;
   cursor: pointer;

@@ -22,19 +22,6 @@ export default function ItemContact() {
     }
   }, [contactsStorage]);
 
-  const onConfirm = (item) => {
-    const updatedContacts = itemsContacts.filter(
-      (item) => item.phone !== selectedDelete.phone
-    );
-    setItemsContacts(updatedContacts);
-
-    localStorage.setItem(
-      "contacts",
-      JSON.stringify({ items: updatedContacts })
-    );
-    setSelectedDelete(null);
-  };
-
   const onSelectItem = (item) => {
     setSelectedDelete(item);
   };
@@ -43,12 +30,17 @@ export default function ItemContact() {
     setSelectedDelete(null);
   };
 
-  // const onConfirm = () => {
-  //   setItemsContacts(
-  //     itemsContacts.filter((item) => item.phone !== selectedDelete.phone)
-  //   );
-  //   setSelectedDelete(null);
-  // };
+  const onConfirm = () => {
+    const updatedContacts = itemsContacts.filter(
+      (item) => item !== selectedDelete
+    );
+    setItemsContacts(updatedContacts);
+    localStorage.setItem(
+      "contacts",
+      JSON.stringify({ items: updatedContacts })
+    );
+    setSelectedDelete(null);
+  };
 
   return (
     <>
@@ -81,19 +73,7 @@ export default function ItemContact() {
               </button>
               <button
                 className={`${stylesApp.fullRoundedBox} ${styles.closeIcon}`}
-                onClick={() => {
-                  onSelectItem(item);
-                  // isConfirm(true);
-                  // if (confirmDelete) {
-                  //   handleDeleteContact(index);
-                  //   isConfirmDelete(false);
-                  // }
-                  // window.confirm(`Are you sure you want to delete ${name}?`)
-                  // if (confirm) {
-                  //   handleDeleteContact(index);
-                  //   isConfirm(false);
-                  // }
-                }}
+                onClick={() => onSelectItem(item)}
                 aria-label={`Delete ${item.name}`}
               >
                 <FaTrashCan />
