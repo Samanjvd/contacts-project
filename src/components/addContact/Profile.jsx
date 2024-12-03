@@ -5,18 +5,6 @@ import { FaCamera } from "react-icons/fa";
 export default function Profile({ onGetUrl }) {
   const [selectedImage, setSelectedImage] = useState(null);
   const inputRef = useRef(null);
-  // const imgRef = useRef("");
-  // const handleImageChange = (e) => {
-  //   const file = e.target.files[0];
-
-  //   if (file) {
-  //     const reader = new FileReader();
-  //     reader.onloadend = () => {
-  //       setSelectedImage(reader.result);
-  //     };
-  //     reader.readAsDataURL(file);
-  //   }
-  // };
 
   const handleImageClicked = () => {
     inputRef.current.click();
@@ -39,7 +27,6 @@ export default function Profile({ onGetUrl }) {
       <div className={styles.imgProfile} onClick={handleImageClicked}>
         {selectedImage ? (
           <img
-            // src={URL.createObjectURL(selectedImage)}
             src={selectedImage}
             alt="Profile"
             className={styles.profileImg}
