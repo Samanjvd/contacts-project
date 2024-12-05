@@ -1,14 +1,12 @@
 .itemContact {
-  height: 13rem;
+  width: 100%;
 }
 
 .listItem {
   position: relative;
-  min-width: 24rem;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
-
   border-radius: 100vmax;
   border: 1px solid #5656567a;
   margin-bottom: 0.8rem;

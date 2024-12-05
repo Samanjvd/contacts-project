@@ -3,13 +3,12 @@
   align-items: center;
   flex-direction: column;
   height: 12rem;
-  padding-bottom: 0.5rem;
+  padding-right: 5px;
   overflow: auto;
-  margin-bottom: 1rem;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
   height: 100%;
 }
 
@@ -19,8 +18,14 @@
 
 ::-webkit-scrollbar-thumb {
   background: #888;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #555;
+  cursor: grabbing;
 }

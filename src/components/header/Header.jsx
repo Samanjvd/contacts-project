@@ -3,10 +3,10 @@ import SearchSection from "./SearchSection";
 import Buttons from "./Buttons";
 import styles from "./Header.module.css";
 
-export default function Header({ onAddModal }) {
+export default function Header({ onAddModal, searchValue }) {
   return (
     <div className={styles.header}>
-      <SearchSection />
+      <SearchSection searchValue={searchValue} />
       <Buttons onAddToBtn={onAddModal} />
     </div>
   );

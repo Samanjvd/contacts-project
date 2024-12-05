@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./SearchSection.module.css";
 import { CiSearch } from "react-icons/ci";
 
-export default function SearchSection() {
+export default function SearchSection({ searchValue }) {
   return (
     <div className={styles.searchSection}>
       <form className={styles.searchForm}>
@@ -13,6 +13,7 @@ export default function SearchSection() {
           type="search"
           className={styles.searchInput}
           placeholder="Search"
+          onChange={(e) => searchValue(e.target.value)}
         />
       </form>
     </div>

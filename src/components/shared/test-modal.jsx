@@ -9,10 +9,10 @@ function TestModal({ onCansell, onConfirm }) {
         </h3>
         <div className={styles.buttons}>
           <button className={styles.btnCansell} onClick={onCansell}>
-            cansell
+            CANCEL
           </button>
           <button className={styles.btnOk} onClick={onConfirm}>
-            ok
+            OK
           </button>
         </div>
       </div>

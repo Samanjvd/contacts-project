@@ -6,12 +6,17 @@ import { useState } from "react";
 
 function App() {
   const [isClicked, setIsClicked] = useState(false);
+  const [search, setsearch] = useState("");
 
   return (
     <div className={styles.app}>
       <div className={styles.container}>
-        <Header statusClicked={isClicked} onAddModal={setIsClicked} />
-        <Main />
+        <Header
+          statusClicked={isClicked}
+          onAddModal={setIsClicked}
+          searchValue={setsearch}
+        />
+        <Main searchValue={search} />
       </div>
       <AddContact statusClicked={isClicked} onAddModal={setIsClicked} />
     </div>
