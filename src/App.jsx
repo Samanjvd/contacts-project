@@ -6,6 +6,7 @@ import { useState } from "react";
 
 function App() {
   const [isClicked, setIsClicked] = useState(false);
+  const [isSort, setIsSort] = useState(false);
   const [search, setsearch] = useState("");
 
   return (
@@ -15,8 +16,10 @@ function App() {
           statusClicked={isClicked}
           onAddModal={setIsClicked}
           searchValue={setsearch}
+          onSort={setIsSort}
+          isStateDoSort={isSort}
         />
-        <Main searchValue={search} />
+        <Main searchValue={search} isStateDoSort={isSort} />
       </div>
       <AddContact statusClicked={isClicked} onAddModal={setIsClicked} />
     </div>

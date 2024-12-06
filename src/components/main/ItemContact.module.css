@@ -1,5 +1,6 @@
 .itemContact {
   width: 100%;
+  border-radius: 100vmax;
 }
 
 .listItem {
@@ -14,11 +15,6 @@
 
 .itemContact :hover {
   background-color: #2979ff;
-  border-radius: 100vmax;
-  -webkit-border-radius: 100vmax;
-  -moz-border-radius: 100vmax;
-  -ms-border-radius: 100vmax;
-  -o-border-radius: 100vmax;
 }
 
 .right {

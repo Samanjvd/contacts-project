@@ -5,21 +5,30 @@ import { BsSortAlphaDown } from "react-icons/bs";
 import { BiFilterAlt } from "react-icons/bi";
 import { IoAddOutline } from "react-icons/io5";
 
-export default function Buttons({ onAddToBtn }) {
+export default function Buttons({ onAddModal, onSort, isStateDoSort }) {
+  const handleClickForSort = () => {
+    isStateDoSort ? onSort(false) : onSort(true);
+  };
+
   return (
     <div className={stylesButtons.buttons}>
-      <div className={`${stylesApp.fullRoundedBox} ${stylesButtons.button}`}>
+      <button
+        className={`${stylesApp.fullRoundedBox} ${stylesButtons.button} ${
+          isStateDoSort ? stylesButtons.activeBtn : null
+        }`}
+        onClick={handleClickForSort}
+      >
         <BsSortAlphaDown />
-      </div>
-      <div className={`${stylesApp.fullRoundedBox} ${stylesButtons.button}`}>
+      </button>
+      <button className={`${stylesApp.fullRoundedBox} ${stylesButtons.button}`}>
         <BiFilterAlt className={stylesButtons.filterIcon} />
-      </div>
-      <div
-        onClick={() => onAddToBtn(true)}
+      </button>
+      <button
+        onClick={() => onAddModal(true)}
         className={`${stylesApp.fullRoundedBox} ${stylesButtons.button}`}
       >
         <IoAddOutline style={{ fontSize: "2rem" }} />
-      </div>
+      </button>
     </div>
   );
 }

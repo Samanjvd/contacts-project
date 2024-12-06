@@ -23,7 +23,7 @@ body {
 
 .container {
   margin-top: 1rem;
-  max-width: 25rem;
+  width: 25rem;
   max-height: 20rem;
   background-color: #000000f0;
   color: #ddd;

@@ -6,11 +6,9 @@ import stylesApp from "../../App.module.css";
 import { FaTrashCan } from "react-icons/fa6";
 import TestModal from "../shared/test-modal";
 
-export default function ItemContact({ searchValue }) {
+export default function ItemContact({ searchValue, isStateDoSort }) {
   const [itemsContacts, setItemsContacts] = useState([]);
   const [selectedDelete, setSelectedDelete] = useState(null);
-
-  console.log(itemsContacts);
 
   const contactsStorage = localStorage.getItem("contacts");
   useEffect(() => {
@@ -62,6 +60,9 @@ export default function ItemContact({ searchValue }) {
           // .filter((item) => {
           //   return searchValue === "" ? item : item.Phone.inculdes(searchValue);
           // })
+          .sort((item1, item2) =>
+            isStateDoSort ? (item1.name > item2.name ? 1 : -1) : 0
+          ) // fix it
           .map((item, index) => (
             <li key={index} className={styles.listItem}>
               <div className={styles.right}>

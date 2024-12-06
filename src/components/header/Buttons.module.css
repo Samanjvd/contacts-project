@@ -8,11 +8,20 @@
   position: relative;
   transition: all 0.15s ease-in;
   cursor: pointer;
+  background-color: #000;
+  color: #fff;
 }
 
 .button:active {
-  background-color: #bbb;
   transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+}
+
+.activeBtn {
+  background-color: #aaa;
 }
 
 .filterIcon {
