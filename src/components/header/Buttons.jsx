@@ -13,6 +13,12 @@ export default function Buttons({ onAddModal, onSort, isStateDoSort }) {
   return (
     <div className={stylesButtons.buttons}>
       <button
+        onClick={() => onAddModal(true)}
+        className={`${stylesApp.fullRoundedBox} ${stylesButtons.button}`}
+      >
+        <IoAddOutline style={{ fontSize: "2rem" }} />
+      </button>
+      <button
         className={`${stylesApp.fullRoundedBox} ${stylesButtons.button} ${
           isStateDoSort ? stylesButtons.activeBtn : null
         }`}
@@ -22,12 +28,6 @@ export default function Buttons({ onAddModal, onSort, isStateDoSort }) {
       </button>
       <button className={`${stylesApp.fullRoundedBox} ${stylesButtons.button}`}>
         <BiFilterAlt className={stylesButtons.filterIcon} />
-      </button>
-      <button
-        onClick={() => onAddModal(true)}
-        className={`${stylesApp.fullRoundedBox} ${stylesButtons.button}`}
-      >
-        <IoAddOutline style={{ fontSize: "2rem" }} />
       </button>
     </div>
   );
