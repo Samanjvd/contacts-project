@@ -21,7 +21,8 @@
 }
 
 .activeBtn {
-  background-color: #aaa;
+  background-color: #ddd;
+  color: #000;
 }
 
 .filterIcon {

@@ -59,6 +59,7 @@
   position: absolute;
   right: 42px;
   z-index: 100;
+  font-size: 1rem;
 }
 
 .favoriteIcon,
@@ -75,3 +76,8 @@
   background-color: #ddd;
   color: #000;
 }
+
+/* .clickActive {
+  background-color: #ddd;
+  color: #000;
+} */
