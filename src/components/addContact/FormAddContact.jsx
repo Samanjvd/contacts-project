@@ -33,8 +33,9 @@ export default function FormAddContact({ statusClicked, onAddModal }) {
 
     const contactItem = {
       name: inputNameValue,
-      Phone: inputPhoneValue,
+      phone: inputPhoneValue,
       url: urlImag,
+      isFavorite: false,
     };
 
     const contactsStorage = localStorage.getItem("contacts");
@@ -43,7 +44,7 @@ export default function FormAddContact({ statusClicked, onAddModal }) {
       const contacts = JSON.parse(contactsStorage);
 
       const isDuplicate = contacts.items.some(
-        (data) => data.Phone === contactItem.Phone
+        (data) => data.phone === contactItem.phone
       );
 
       if (!isDuplicate) {

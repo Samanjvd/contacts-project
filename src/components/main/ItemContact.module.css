@@ -66,18 +66,14 @@
 .closeIcon {
   background-color: #000;
   color: #ddd;
+  cursor: pointer;
 }
 
 .left {
   cursor: pointer;
 }
 
-.left :hover {
+.clickActive {
   background-color: #ddd;
   color: #000;
 }
-
-/* .clickActive {
-  background-color: #ddd;
-  color: #000;
-} */

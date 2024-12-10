@@ -8,6 +8,7 @@ export default function Header({
   searchValue,
   onSort,
   isStateDoSort,
+  stateClickFilter,
 }) {
   return (
     <div className={styles.header}>
@@ -16,6 +17,7 @@ export default function Header({
         onAddModal={onAddModal}
         onSort={onSort}
         isStateDoSort={isStateDoSort}
+        stateClickFilter={stateClickFilter}
       />
     </div>
   );

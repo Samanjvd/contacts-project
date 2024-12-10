@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import styles from "./AddContact.module.css";
 import { IoMdClose } from "react-icons/io";
 import FormAddContact from "./FormAddContact";
