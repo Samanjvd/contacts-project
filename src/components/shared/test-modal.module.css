@@ -20,6 +20,7 @@
   width: 50%;
   padding: 0.5rem 0.4rem;
   border-radius: 0 0 0 8px;
+  cursor: pointer;
 }
 
 .btnCansell:active {
@@ -30,6 +31,7 @@
   width: 50%;
   padding: 0.5rem 0.4rem;
   border-radius: 0 0 8px 0;
+  cursor: pointer;
 }
 
 .btnOk:active {
