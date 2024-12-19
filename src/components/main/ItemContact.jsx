@@ -79,6 +79,7 @@ export default function ItemContact({
 
     return filteredItems;
   }, [itemsContacts, searchValue, isStateDoSort, stateClickFilterItem]);
+  console.log("render");
 
   return (
     <>
